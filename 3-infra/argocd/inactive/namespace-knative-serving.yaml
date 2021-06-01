@@ -8,7 +8,7 @@ metadata:
     gitops.tier.group: knative-serverless
 spec:
   destination:
-    namespace: openshift-operators
+    namespace: knative-serving
     server: https://kubernetes.default.svc
   project: infra
   source:
