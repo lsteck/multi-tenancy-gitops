@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace-default
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"    
+  labels:
+    gitops.tier.group: knative-serverless
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    path: 3-infra/namespaces/default
+    repoURL: https://github.com/cloud-native-toolkit/multi-tenancy-gitops.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
