@@ -33,6 +33,8 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: openshift-gitops
     server: https://kubernetes.default.svc
+  - namespace: openshift-serverless
+    server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: ""
     kind: Namespace
