@@ -184,3 +184,9 @@ rules:
       - imageregistry.operator.openshift.io
     resources:
       - '*'
+  - verbs:
+      - '*'
+    apiGroups:
+      - operator.knative.dev
+    resources:
+      - 'knativeeventings'

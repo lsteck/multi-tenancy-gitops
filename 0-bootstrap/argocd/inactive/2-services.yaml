@@ -61,6 +61,8 @@ spec:
     kind: routes
   - group: ""
     kind: RoleBinding
+  - group: "operator.knative.dev"
+    kind: knativeeventings
   roles:
   # A role which provides read-only access to all applications in the project
   - name: read-only
