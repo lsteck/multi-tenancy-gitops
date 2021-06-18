@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: slack-notifications
+  labels:
+    gitops.tier.group: slack-notifications
+  annotations:
+    argocd.argoproj.io/sync-wave: "400"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io  
+spec:
+  destination:
+    namespace: slack-notifications
+    server: https://kubernetes.default.svc
+  project: applications
+  source:
+    path: 1-apps/instances/slack-notifications
+    repoURL: https://github.com/cloud-native-toolkit/multi-tenancy-gitops.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
