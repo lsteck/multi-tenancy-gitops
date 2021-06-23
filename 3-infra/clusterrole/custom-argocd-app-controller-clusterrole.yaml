@@ -190,3 +190,9 @@ rules:
       - operator.knative.dev
     resources:
       - 'knativeeventings'
+  - verbs:
+      - '*'
+    apiGroups:
+      - eventing.knative.dev
+    resources:
+      - 'triggers'
